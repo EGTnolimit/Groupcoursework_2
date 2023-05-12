@@ -33,6 +33,22 @@
         data:{
           lessons: []
         },
+        created:
+          function(){
+            fetch('http://localhost:3000/lessons').then(
+              function(response){
+                response.json().then(
+                  function(json){
+                      webstore.lessons = json
+                      console.log("lessons" + this.lessons)
+                      console.log("lessons json" + json)
+                      console.log("lessons webstore" + webstore.lessons)
+                  }
+                )
+              }
+            )
+          
+        }
       });
 
     </script>
